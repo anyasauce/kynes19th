@@ -1,0 +1,191 @@
+::-webkit-scrollbar {
+    width: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #ff4d94;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #f1f1f1;
+    border-radius: 10px;
+}
+
+html,
+body {
+    overflow-x: hidden;
+    width: 100%;
+}
+body {
+    font-family: 'Montserrat', sans-serif;
+        background-color: #ffebf3;
+        overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+
+.birthday-header {
+    font-family: 'Dancing Script', cursive;
+    color: #ff4d94;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    font-size: 4rem;
+    margin-top: 2rem;
+}
+
+.subheader {
+    color: #9c27b0;
+    font-weight: bold;
+}
+
+.birthday-card {
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    margin-top: 2rem;
+    border: 5px solid #ff80ab;
+}
+
+.profile-img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 5px solid #ff80ab;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.gallery-img {
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+    cursor: pointer;
+}
+
+.gallery-img:hover {
+    transform: scale(1.05);
+}
+
+.card-message {
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+.balloon {
+    position: absolute;
+    width: 40px;
+    height: 55px;
+    background-color: rgba(255, 77, 148, 0.8);
+    border-radius: 50%;
+    animation: float 5s infinite ease-in-out;
+}
+
+.balloon:before {
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 15px;
+    background-color: rgba(255, 77, 148, 0.8);
+    bottom: -7px;
+    left: 15px;
+    border-radius: 0 0 5px 5px;
+}
+
+.confetti {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    opacity: 0.8;
+    animation: fall 5s linear infinite;
+}
+
+.countdown {
+    font-size: 1.3rem;
+    color: #9c27b0;
+    font-weight: bold;
+}
+
+.gallery-container {
+    padding: 2rem 0;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: rgba(255, 77, 148, 0.8);
+    border-radius: 50%;
+    padding: 20px;
+}
+
+.btn-pink {
+    background-color: #ff4d94;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-weight: bold;
+    box-shadow: 0 3px 10px rgba(255, 77, 148, 0.3);
+    transition: all 0.3s;
+}
+
+.btn-pink:hover {
+    background-color: #ff80ab;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(255, 77, 148, 0.5);
+    color: white;
+}
+
+.cake-icon {
+    font-size: 2rem;
+    color: #ff4d94;
+    margin: 0 10px;
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(-100px) rotate(0deg);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+.modal-content {
+    border-radius: 15px;
+    border: 5px solid #ff80ab;
+}
+
+.modal-header {
+    background-color: #ff80ab;
+    color: white;
+    border-radius: 10px 10px 0 0;
+}
+
+#countdown {
+    font-size: 1.5rem;
+    color: #ff4d94;
+}
+
+.name-highlight {
+    font-weight: bold;
+    color: #9c27b0;
+}
