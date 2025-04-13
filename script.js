@@ -77,15 +77,40 @@ document.querySelectorAll('.gallery-img').forEach(img => {
     });
 });
 
-document.getElementById('playMusic').addEventListener('click', function () {
-    const song = document.getElementById('birthdaySong');
-    if (song.paused) {
-        song.play();
-        this.innerHTML = '<i class="fas fa-pause"></i> Pause Music';
-    } else {
-        song.pause();
-        this.innerHTML = '<i class="fas fa-music"></i> Play Birthday Song';
+const song = document.getElementById('birthdaySong');
+const startScreen = document.getElementById('startScreen');
+const startBtn = document.getElementById('startBtn');
+
+const birthdayDate = new Date('April 14, 2025 00:00:00').getTime();
+
+startBtn.addEventListener('click', () => {
+    const now = new Date().getTime();
+
+    if (now < birthdayDate) {
+        Swal.fire({
+            title: 'Please wait!',
+            text: 'Your gift will be available on April 14, 2025, 12:00 AM',
+            icon: 'info',
+            confirmButtonText: 'OK',
+            confirmButtonColor: '#ff69b4',
+            background: '#fff0f5',
+            iconColor: '#ff69b4'
+        });
+        return;
     }
+
+    song.play().then(() => {
+        console.log("Music started!");
+    }).catch(err => {
+        console.log("Autoplay blocked:", err);
+    });
+
+    startScreen.style.opacity = '0';
+    startScreen.style.pointerEvents = 'none';
+
+    setTimeout(() => {
+        startScreen.style.display = 'none';
+    }, 500);
 });
 
 document.addEventListener('DOMContentLoaded', function () {

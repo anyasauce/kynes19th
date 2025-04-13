@@ -8,7 +8,13 @@
     <link rel="icon" href="images/12.jpg" type="image/x-icon">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Montserrat:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@400;600&display=swap"
+        rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -31,29 +37,27 @@
                     <img src="images/12.jpg" class="profile-img" alt="Birthday Girl" id="profileImage">
                     <h4 class="mt-3">Happy Birthday!</h4>
                     <p>April 14th, 2025</p>
-                    <button class="btn btn-pink mt-2" id="playMusic"><i class="fas fa-music"></i> Play Birthday
-                        Song</button>
                 </div>
                 <div class="col-md-8">
                     <div class="card-message">
                         <p>Dear <span class="name-highlight">Kynes Joy Vasquez</span>,</p>
                         <p>Happy 19th birthday! 🎉 Wishing you a year full of joy, laughter, and endless possibilities.
-                            May all your dreams come true!</p>
-                        <p>Enjoy your special day—you deserve all the happiness in the world!</p>
+                            May all
+                            your dreams come true! Enjoy your special day—you deserve all the happiness in the world.
+                        </p>
 
-                        <h5 class="mt-4">Messages from Friend's / Cousin's:</h5>
-                        <ul>
-                            <li><strong>John Dave:</strong> " "</li>
-                            <li><strong>John Carlo:</strong> " "</li>
-                            <li><strong>Redjie:</strong> " "</li>
-                            <li><strong>Edwin:</strong> " "</li>
-                            <li><strong>Lief:</strong> " "</li>
-                        </ul>
+                        <p>Your friends and cousins all wish you the best on your special day. May this year be filled
+                            with
+                            love, laughter, and success. We hope your birthday is as amazing as you are, and that all
+                            your
+                            dreams come true. Enjoy every moment and make this year unforgettable!</p>
+
                         <p>With love and best wishes,<br>Your Friends & Cousins</p>
                     </div>
                 </div>
             </div>
         </div>
+
     </div>
 
     <div class="gallery-container">
@@ -163,9 +167,23 @@
         </div>
     </div>
 
-    <audio id="birthdaySong">
+    <audio id="birthdaySong" autoplay>
         <source src="music/hbd.mp3" type="audio/mp3">
     </audio>
+
+    <div id="startScreen"
+        class="position-fixed top-0 start-0 w-100 h-100 d-flex flex-column justify-content-center align-items-center text-center"
+        style="background: linear-gradient(135deg, #ffc0cb, #ffe4e1); z-index: 9999; font-family: 'Pacifico', cursive;">
+
+        <h1 class="mb-4 text-danger px-3" style="font-size: clamp(24px, 6vw, 36px);">
+            🎁 A Special Surprise for You!
+        </h1>
+
+        <button id="startBtn" class="btn btn-lg"
+            style="background-color: #ff69b4; color: white; border-radius: 15px; padding: 15px 30px; box-shadow: 0 5px 15px rgba(0,0,0,0.2); font-family: 'Poppins', sans-serif;">
+            💝 Open Your Gift
+        </button>
+    </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
     <script src="script.js"></script>

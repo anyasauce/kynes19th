@@ -19,8 +19,7 @@ body {
 }
 body {
     font-family: 'Montserrat', sans-serif;
-        background-color: #ffebf3;
-        overflow-x: hidden;
+    background-color: #ffebf3;
     margin: 0;
     padding: 0;
     min-height: 100vh;
@@ -188,4 +187,39 @@ body {
 .name-highlight {
     font-weight: bold;
     color: #9c27b0;
+}
+
+@keyframes floatUp {
+    0% {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(-120%);
+        opacity: 0;
+    }
+}
+
+#startBtn {
+    animation: pulse 2s infinite;
+    transition: transform 0.2s;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
 }
