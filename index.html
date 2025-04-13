@@ -25,8 +25,7 @@
                 <h1 class="birthday-header">Happy 19th Birthday!</h1>
                 <h3 class="subheader" id="birthdayName">To Our Dearest Kynes Joy Vasquez</h3>
                 <div id="countdown" class="mb-3">
-                    <span id="days"></span> days, <span id="hours"></span> hours, <span id="minutes"></span> minutes,
-                    <span id="seconds"></span> seconds until your birthday!
+                    🎉 It's Your Birthday! 🎉
                 </div>
             </div>
         </div>
@@ -172,18 +171,147 @@
     </audio>
 
     <div id="startScreen"
-        class="position-fixed top-0 start-0 w-100 h-100 d-flex flex-column justify-content-center align-items-center text-center"
-        style="background: linear-gradient(135deg, #ffc0cb, #ffe4e1); z-index: 9999; font-family: 'Pacifico', cursive;">
-
-        <h1 class="mb-4 text-danger px-3" style="font-size: clamp(24px, 6vw, 36px);">
-            🎁 A Special Surprise for You!
+        class="position-fixed p-3 top-0 start-0 w-100 h-100 d-flex flex-column justify-content-center align-items-center text-center"
+        style="background: linear-gradient(135deg, #ffc0cb, #ffe4e1, #ffb6c1); z-index: 9999; font-family: 'Pacifico', cursive; overflow: hidden; transition: opacity 0.5s ease;">
+    
+        <div class="balloon" style="position: absolute; top: 15%; left: 10%; font-size: 45px;">🎈</div>
+        <div class="balloon" style="position: absolute; top: 25%; right: 15%; font-size: 55px;">🎈</div>
+        <div class="balloon" style="position: absolute; bottom: 30%; left: 20%; font-size: 50px;">🎈</div>
+        <div class="balloon" style="position: absolute; bottom: 20%; right: 10%; font-size: 60px;">🎈</div>
+    
+        <div id="confetti-container"></div>
+    
+        <h1 class="mb-4 px-3 animate-pop-in"
+            style="font-size: clamp(32px, 8vw, 60px); color: #d23c77; text-shadow: 2px 2px 4px rgba(0,0,0,0.1);">
+            Happy Birthday, Kyn2!
         </h1>
-
-        <button id="startBtn" class="btn btn-lg"
-            style="background-color: #ff69b4; color: white; border-radius: 15px; padding: 15px 30px; box-shadow: 0 5px 15px rgba(0,0,0,0.2); font-family: 'Poppins', sans-serif;">
-            💝 Open Your Gift
+    
+        <p class="mb-3 animate-pop-in" style="font-size: clamp(22px, 5vw, 30px); color: #e84393;">
+            Your special day deserves a special surprise!
+        </p>
+    
+        <div id="countdown" class="mb-4 animate-pop-in"
+            style="background: rgba(255,255,255,0.7); padding: 15px 40px; border-radius: 20px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+            <div style="font-size: clamp(20px, 5vw, 28px); color: #333;">
+                <span id="days" style="font-weight: bold; color: #ff1493;"></span> days,
+                <span id="hours" style="font-weight: bold; color: #ff1493;"></span> hours,
+                <span id="minutes" style="font-weight: bold; color: #ff1493;"></span> minutes,
+                <span id="seconds" style="font-weight: bold; color: #ff1493;"></span> seconds
+            </div>
+            <div style="font-size: clamp(16px, 4vw, 22px); color: #555;">
+                until your amazing birthday!
+            </div>
+        </div>
+    
+        <button id="startBtn" class="btn btn-lg mt-3 animate-bounce" style="background: linear-gradient(45deg, #ff69b4, #ff1493); color: white; 
+                       border: none; border-radius: 25px; padding: 15px 40px; 
+                       font-size: clamp(22px, 5vw, 30px); box-shadow: 0 5px 20px rgba(255,105,180,0.4);
+                       transition: all 0.3s ease; transform-style: preserve-3d;">
+            Unwrap Your Surprise Gift!
         </button>
+    
+        <footer class="mt-5 animate-fade-in" style="position: relative; z-index: 1;">
+            <p style="font-size: 20px; color: #777;">
+                Developed by: <strong style="color: #ff1493;">Josiah</strong>
+            </p>
+        </footer>
+    
+        <div class="birthday-cake"
+            style="position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); font-size: 80px;">
+            🎂
+        </div>
     </div>
+
+
+    <style>
+        @keyframes popIn {
+            0% {
+                transform: scale(0.5);
+                opacity: 0;
+            }
+    
+            80% {
+                transform: scale(1.1);
+            }
+    
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+    
+        @keyframes bounce {
+    
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+    
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+    
+        @keyframes float {
+    
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+    
+            50% {
+                transform: translateY(-15px);
+            }
+        }
+    
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+    
+            to {
+                opacity: 1;
+            }
+        }
+    
+        @keyframes floatUp {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 1;
+            }
+    
+            100% {
+                transform: translateY(-100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+    
+        .animate-pop-in {
+            animation: popIn 0.8s ease-out forwards;
+        }
+    
+        .animate-bounce {
+            animation: bounce 2s infinite;
+        }
+    
+        .animate-fade-in {
+            animation: fadeIn 2s ease-in forwards;
+        }
+    
+        .balloon {
+            animation: float 3s ease-in-out infinite;
+            z-index: 0;
+        }
+    
+        .birthday-cake {
+            animation: bounce 3s infinite;
+        }
+    
+        #startBtn:hover {
+            transform: scale(1.05) translateY(-3px);
+            box-shadow: 0 8px 25px rgba(255, 105, 180, 0.6);
+        }
+    </style>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
     <script src="script.js"></script>
