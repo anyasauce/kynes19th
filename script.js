@@ -87,15 +87,7 @@ startBtn.addEventListener('click', () => {
     const now = new Date().getTime();
 
     if (now < birthdayDate) {
-        Swal.fire({
-            title: 'Please wait!',
-            text: 'Your gift will be available on April 14, 2025, 12:00 AM',
-            icon: 'info',
-            confirmButtonText: 'OK',
-            confirmButtonColor: '#ff69b4',
-            background: '#fff0f5',
-            iconColor: '#ff69b4'
-        });
+        alert("Please wait until April 14, 2025, 12:00 AM to open your gift!");
         return;
     }
 
