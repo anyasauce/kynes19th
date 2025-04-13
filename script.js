@@ -49,7 +49,7 @@ function createDecorations() {
 }
 
 function updateCountdown() {
-    const birthdayDate = new Date('April 14, 2025 00:00:00').getTime();
+    const birthdayDate = new Date('April 15, 2025 00:00:00').getTime();
     const now = new Date().getTime();
     const distance = birthdayDate - now;
 
@@ -81,13 +81,13 @@ const song = document.getElementById('birthdaySong');
 const startScreen = document.getElementById('startScreen');
 const startBtn = document.getElementById('startBtn');
 
-const birthdayDate = new Date('April 14, 2025 00:00:00').getTime();
+const birthdayDate = new Date('April 15, 2025 00:00:00').getTime();
 
 startBtn.addEventListener('click', () => {
     const now = new Date().getTime();
 
     if (now < birthdayDate) {
-        alert("Please wait until April 14, 2025, 12:00 AM to open your gift!");
+        alert("Please wait until April 15, 2025, 12:00 AM to open your gift!");
         return;
     }
 
